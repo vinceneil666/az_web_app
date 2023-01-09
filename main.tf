@@ -18,3 +18,11 @@ resource "azurerm_linux_web_app" "webapp001" {
   minimum_tls_version = "1.2"
   }
 }
+#  Deploy code from a public GitHub repo
+resource "azurerm_app_service_source_control" "sourcecontrol" {
+  app_id             = azurerm_linux_web_app.webapp001.id
+  repo_url           = "https://github.com/vinceneil666/generic-webpage.git"
+  branch             = "master"
+  use_manual_integration = true
+  use_mercurial      = false
+}
