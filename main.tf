@@ -1,15 +1,11 @@
-resource "azurerm_resource_group" "example" {
-  name     = "example"
+resource "azurerm_resource_group" "apprg" {
+  name     = "rg-app-services"
   location = "West Europe"
 }
-resource "azurerm_resource_group" "example2" {
-  name     = "example2"
-  location = "West Europe"
-}
-resource "azurerm_app_service_plan" "example" {
-  name                = "example-appserviceplan"
+resource "azurerm_app_service_plan" "plan01" {
+  name                = "app-service.plan"
   location            = "West Europe"
-  resource_group_name = azurerm_resource_group.example.name
+  resource_group_name = azurerm_resource_group.apprg.name
 
   sku {
     tier = "Standard"
