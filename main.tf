@@ -15,7 +15,7 @@ resource "azurerm_linux_web_app" "webapp001" {
   location            = "West Europe"
   service_plan_id     = azurerm_service_plan.my-app-plan.id
   site_config {
-    linux_fx_version = "DOTNETCORE|5.0"
+    #linux_fx_version = "DOTNETCORE|5.0"
     dotnet_framework_version = "v5.0"
   }
 }
