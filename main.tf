@@ -10,7 +10,7 @@ resource "azurerm_service_plan" "my-app-plan" {
   sku_name            = "P1v2"
 }
 resource "azurerm_windows_web_app" "webapp001" {
-  name                = "tj-01-mywebapp001"
+  name                = "tj-02-mywebapp001"
   resource_group_name = azurerm_resource_group.apprg.name
   location            = "West Europe"
   service_plan_id     = azurerm_service_plan.my-app-plan.id
